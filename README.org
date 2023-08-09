@@ -1,0 +1,12 @@
+#+title: Rock-Paper-Scissors
+
+** About this project
+
+The aim of this project is to strengthen my basic skills in JavaScript by creating a
+simple Rock-Paper-Scissors game. This is the first JavaScript project in the Odin Project
+Foundations course.
+
+** Links
+
++ [[https://www.theodinproject.com/about][About Odin]]
++ [[https://www.theodinproject.com/lessons/foundations-rock-paper-scissors][Assignment page]]
