@@ -21,21 +21,21 @@
 + [X] IF computer and player choose the same
   + [X] Game is a tie
 
-** TODO Decide the winner [1/4]
+** TODO Decide the winner [4/4]
 
 + [X] Decide the winner according to game logic
-+ [ ] IF player wins
-  + [ ] Add a point to his score
-+ [ ] IF computer wins
-  + [ ] Add a point to his score
-+ [ ] Display message which shows winner and total score
++ [X] IF player wins
+  + [X] Add a point to his score
++ [X] IF computer wins
+  + [X] Add a point to his score
++ [X] Display message which shows winner and total score
 
-** TODO Loop until one player wins 5 games [0/3]
+** TODO Loop until one player wins 5 games [3/3]
 
-+ [ ] Check if either player has 5 points
-+ [ ] IF player has 5 points
-  + [ ] Show message "Player wins"
-  + [ ] End game
-+ [ ] ELSE IF computer wins
-  + [ ] Show message "Computer wins"
-  + [ ] End game
++ [X] Check if either player has 5 points
++ [X] IF player has 5 points
+  + [X] Show message "Player wins"
+  + [X] End game
++ [X] ELSE IF computer wins
+  + [X] Show message "Computer wins"
+  + [X] End game
