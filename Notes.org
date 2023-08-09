@@ -7,11 +7,11 @@
 + [X] Define computer choice with array item at random number
 + [X] Return choice
 
-** TODO Get players choice [0/3]
+** DONE Get players choice [3/3]
 
-+ [ ] Prompt player to input his choice
-+ [ ] Check if choice is valid
-+ [ ] Convert choice to lowercase to make the input case-insensitive
++ [X] Prompt player to input his choice
++ [X] Check if choice is valid
++ [X] Convert choice to lowercase to make the input case-insensitive
 
 ** TODO Define game logic [0/4]
 
