@@ -1,11 +1,11 @@
 #+title: Project notes
 
-** TODO Get random computer choice [0/4]
+** DONE Get random computer choice [4/4]
 
-+ [ ] Array with the three choices (Rock, paper, scissors)
-+ [ ] Generate a random number from 0-2
-+ [ ] Define computer choice with array item at random number
-+ [ ] Return choice
++ [X] Array with the three choices (Rock, paper, scissors)
++ [X] Generate a random number from 0-2
++ [X] Define computer choice with array item at random number
++ [X] Return choice
 
 ** TODO Get players choice [0/3]
 
