@@ -13,17 +13,17 @@
 + [X] Check if choice is valid
 + [X] Convert choice to lowercase to make the input case-insensitive
 
-** TODO Define game logic [0/4]
+** TODO Define game logic [4/4]
 
-+ [ ] Rock beats scissors
-+ [ ] Scissors beats paper
-+ [ ] Paper beats rock
-+ [ ] IF computer and player choose the same
-  + [ ] Game is a tie
++ [X] Rock beats scissors
++ [X] Scissors beats paper
++ [X] Paper beats rock
++ [X] IF computer and player choose the same
+  + [X] Game is a tie
 
-** TODO Decide the winner [0/4]
+** TODO Decide the winner [1/4]
 
-+ [ ] Decide the winner according to game logic
++ [X] Decide the winner according to game logic
 + [ ] IF player wins
   + [ ] Add a point to his score
 + [ ] IF computer wins
