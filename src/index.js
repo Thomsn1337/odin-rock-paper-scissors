@@ -59,3 +59,7 @@ const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", playGame);
 });
+
+window.addEventListener("load", () => {
+  document.body.style.opacity = 1;
+});

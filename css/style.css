@@ -13,6 +13,8 @@ body {
   color: var(--main-fg-color);
   font-family: 'Special Elite', cursive;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .hidden {
@@ -28,7 +30,7 @@ body {
 }
 
 header {
-  margin: 40px 0;
+  margin: 40px 0 20px 0;
   padding: 30px;
 }
 
@@ -39,6 +41,7 @@ header h1 {
 
 header h2 {
   font-size: 32px;
+  margin-bottom: 50px;
 }
 
 header .score {
