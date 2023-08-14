@@ -46,6 +46,6 @@
 
 ** DONE Get player choice using buttons
 
-** Redo the winner declaration
+** DONE Redo the winner declaration
 
 ** Redo main game loop
