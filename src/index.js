@@ -41,6 +41,7 @@ function updateScore(winner) {
 function playGame() {
   if (scorePanel.classList.contains("hidden")) {
     scorePanel.classList.remove("hidden");
+    scorePanel.classList.add("show");
   }
 
   const playerChoice = getPlayerChoice(this);
