@@ -1,101 +1,84 @@
 const CHOICES = ["rock", "paper", "scissors"];
+let playerPoints = 0;
+let computerPoints = 0;
 
-const getComputerChoice = () => {
-  const MIN = 0;
-  const MAX = 3;
-  const randomNum = Math.floor(Math.random() * (MAX - MIN)) + MIN;
+const scorePanel = document.querySelector(".score");
+const playerScoreText = document.querySelector("#player-score");
+const computerScoreText = document.querySelector("#computer-score");
+const winnerMessage = document.querySelector("#winner-message");
+const modal = document.querySelector("#restart-modal");
+const modalText = document.querySelector("#winner");
+const restartButton = document.querySelector("#play-again");
+
+function getComputerChoice() {
+  const randomNum = Math.floor(Math.random() * CHOICES.length);
   return CHOICES[randomNum];
-};
+}
 
-const getPlayerChoice = () => {
-  while (true) {
-    const playerChoice = prompt("Enter your choice.").toLocaleLowerCase();
-    if (!CHOICES.includes(playerChoice)) {
-      alert("Not a valid choice");
-    } else {
-      return playerChoice;
-    }
+function getPlayerChoice(button) {
+  return button.id;
+}
+
+function declareWinner(playerChoice, computerChoice) {
+  if (playerChoice === computerChoice) return "Tie";
+  else if (
+    (playerChoice === "paper" && computerChoice === "rock") ||
+    (playerChoice === "scissors" && computerChoice === "paper") ||
+    (playerChoice === "rock" && computerChoice === "scissors")
+  )
+    return "Player";
+  else return "Computer";
+}
+
+function updateScore(winner, playerChoice, computerChoice) {
+  if (winner === "Player") {
+    playerPoints++;
+    playerScoreText.textContent = playerPoints;
+    winnerMessage.textContent = `You win! You chose ${playerChoice}, your enemy chose ${computerChoice}.`;
+    return;
+  } else if (winner === "Computer") {
+    computerPoints++;
+    computerScoreText.textContent = computerPoints;
+    winnerMessage.textContent = `Your enemy wins! He chose ${computerChoice}, you chose ${playerChoice}.`;
+    return;
+  } else {
+    winnerMessage.textContent = `It's a tie! You both chose ${playerChoice}.`;
+    return;
   }
-};
+}
 
-const decideWinner = (computerChoice, playerChoice) => {
-  switch (computerChoice) {
-    case "rock":
-      if (playerChoice === "rock") {
-        return "tie";
-      }
-      if (playerChoice === "paper") {
-        return "player";
-      }
-      if (playerChoice === "scissors") {
-        return "computer";
-      }
-      break;
-    case "paper":
-      if (playerChoice === "rock") {
-        return "computer";
-      }
-      if (playerChoice === "paper") {
-        return "tie";
-      }
-      if (playerChoice === "scissors") {
-        return "player";
-      }
-      break;
-    case "scissors":
-      if (playerChoice === "rock") {
-        return "player";
-      }
-      if (playerChoice === "paper") {
-        return "computer";
-      }
-      if (playerChoice === "scissors") {
-        return "tie";
-      }
-      break;
+function endGame() {
+  if(playerPoints > computerPoints) {
+    modalText.textContent = "You successfully defeated the machine.";
+  } else {
+    modalText.textContent = "The machine is superior. You lost.";
   }
-  return "";
-};
 
-const game = () => {
-  let playerPoints = 0;
-  let computerPoints = 0;
+  modal.classList.remove("hidden");
+  modal.classList.add("show");
+}
 
-  while (true) {
-    let playerChoice = getPlayerChoice();
-    let computerChoice = getComputerChoice();
-
-    let winner = decideWinner(computerChoice, playerChoice);
-    if (winner === "player") {
-      playerPoints++;
-      alert(
-        `Player won!\nPlayer's points: ${playerPoints}\nComputer's points: ${computerPoints}`,
-      );
-      console.log(computerChoice);
-    }
-    if (winner === "computer") {
-      computerPoints++;
-      alert(
-        `Computer won!\nPlayer's points: ${playerPoints}\nComputer's points: ${computerPoints}`,
-      );
-      console.log(computerChoice);
-    }
-    if (winner === "tie") {
-      alert(
-        `It's a tie!\nPlayer's points: ${playerPoints}\nComputer's points: ${computerPoints}`,
-      );
-      console.log(computerChoice);
-    }
-
-    if (playerPoints === 5) {
-      alert("You won the game!");
-      break;
-    }
-    if (computerPoints === 5) {
-      alert("The computer won the game!");
-      break;
-    }
+function playGame() {
+  if (scorePanel.classList.contains("hidden")) {
+    scorePanel.classList.remove("hidden");
+    scorePanel.classList.add("show");
   }
-};
 
-game();
+  const playerChoice = getPlayerChoice(this);
+  const computerChoice = getComputerChoice();
+  const winner = declareWinner(playerChoice, computerChoice);
+
+  updateScore(winner, playerChoice, computerChoice);
+  if (playerPoints === 5 || computerPoints === 5) endGame();
+}
+
+const buttons = document.querySelectorAll(".selection");
+buttons.forEach((button) => {
+  button.addEventListener("click", playGame);
+});
+
+window.addEventListener("load", () => {
+  document.body.style.opacity = 1;
+});
+
+restartButton.addEventListener("click", () => window.location.reload());

@@ -1,5 +1,7 @@
 #+title: Project notes
 
+* Console version
+
 ** DONE Get random computer choice [4/4]
 
 + [X] Array with the three choices (Rock, paper, scissors)
@@ -39,3 +41,11 @@
 + [X] ELSE IF computer wins
   + [X] Show message "Computer wins"
   + [X] End game
+
+* UI version
+
+** DONE Get player choice using buttons
+
+** DONE Redo the winner declaration
+
+** DONE Redo main game loop

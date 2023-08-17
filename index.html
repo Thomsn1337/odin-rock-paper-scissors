@@ -4,9 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
+    <header>
+      <h1>The ultimate fight</h1>
+      <h2>Can you beat the machine?</h2>
+      <div class="score hidden">
+        You <span id="player-score">0</span> :
+        <span id="computer-score">0</span> Foe
+      </div>
+    </header>
+    <main>
+      <div class="buttons">
+        <button class="selection" id="rock">Rock</button>
+        <button class="selection" id="paper">Paper</button>
+        <button class="selection" id="scissors">Scissors</button>
+      </div>
+      <p>Choose your weapon</p>
+      <div id="winner-message"></div>
+    </main>
+    <div class="modal hidden" id="restart-modal">
+      <div class="modal-content">
+        <p id="winner">You defeated the machine</p>
+        <button id="play-again">Play again</button>
+      </div>
+    </div>
     <script src="./src/index.js"></script>
   </body>
 </html>
