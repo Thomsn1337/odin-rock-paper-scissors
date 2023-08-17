@@ -8,5 +8,6 @@ Foundations course.
 
 ** Links
 
++ [[https://thomsn1337.github.io/odin-rock-paper-scissors/][Preview]]
 + [[https://www.theodinproject.com/about][About Odin]]
 + [[https://www.theodinproject.com/lessons/foundations-rock-paper-scissors][Assignment page]]
