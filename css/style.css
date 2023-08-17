@@ -78,3 +78,7 @@ button:hover {
 p {
   font-size: 28px;
 }
+
+#winner-message {
+  font-size: 18px;
+}

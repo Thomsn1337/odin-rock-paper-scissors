@@ -5,6 +5,7 @@ let computerPoints = 0;
 const scorePanel = document.querySelector(".score");
 const playerScoreText = document.querySelector("#player-score");
 const computerScoreText = document.querySelector("#computer-score");
+const winnerMessage = document.querySelector("#winner-message");
 
 function getComputerChoice() {
   const randomNum = Math.floor(Math.random() * CHOICES.length);
@@ -26,16 +27,21 @@ function declareWinner(playerChoice, computerChoice) {
   else return "Computer";
 }
 
-function updateScore(winner) {
+function updateScore(winner, playerChoice, computerChoice) {
   if (winner === "Player") {
     playerPoints++;
     playerScoreText.textContent = playerPoints;
+    winnerMessage.textContent = `You win! You chose ${playerChoice}, your enemy chose ${computerChoice}.`;
     return;
   } else if (winner === "Computer") {
-    computerScoreText.textContent = computerPoints;
     computerPoints++;
+    computerScoreText.textContent = computerPoints;
+    winnerMessage.textContent = `Your enemy wins! He chose ${computerChoice}, you chose ${playerChoice}.`;
     return;
-  } else return;
+  } else {
+    winnerMessage.textContent = `It's a tie! You both chose ${playerChoice}.`;
+    return;
+  }
 }
 
 function playGame() {
@@ -48,7 +54,7 @@ function playGame() {
   const computerChoice = getComputerChoice();
   const winner = declareWinner(playerChoice, computerChoice);
 
-  updateScore(winner);
+  updateScore(winner, playerChoice, computerChoice);
   if (playerPoints === 5 || computerPoints === 5) {
     if (playerPoints > computerPoints) console.log("Player wins");
     else console.log("Computer wins");
