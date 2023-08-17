@@ -6,6 +6,9 @@ const scorePanel = document.querySelector(".score");
 const playerScoreText = document.querySelector("#player-score");
 const computerScoreText = document.querySelector("#computer-score");
 const winnerMessage = document.querySelector("#winner-message");
+const modal = document.querySelector("#restart-modal");
+const modalText = document.querySelector("#winner");
+const restartButton = document.querySelector("#play-again");
 
 function getComputerChoice() {
   const randomNum = Math.floor(Math.random() * CHOICES.length);
@@ -44,6 +47,17 @@ function updateScore(winner, playerChoice, computerChoice) {
   }
 }
 
+function endGame() {
+  if(playerPoints > computerPoints) {
+    modalText.textContent = "You successfully defeated the machine.";
+  } else {
+    modalText.textContent = "The machine is superior. You lost.";
+  }
+
+  modal.classList.remove("hidden");
+  modal.classList.add("show");
+}
+
 function playGame() {
   if (scorePanel.classList.contains("hidden")) {
     scorePanel.classList.remove("hidden");
@@ -55,10 +69,7 @@ function playGame() {
   const winner = declareWinner(playerChoice, computerChoice);
 
   updateScore(winner, playerChoice, computerChoice);
-  if (playerPoints === 5 || computerPoints === 5) {
-    if (playerPoints > computerPoints) console.log("Player wins");
-    else console.log("Computer wins");
-  }
+  if (playerPoints === 5 || computerPoints === 5) endGame();
 }
 
 const buttons = document.querySelectorAll(".selection");
@@ -69,3 +80,5 @@ buttons.forEach((button) => {
 window.addEventListener("load", () => {
   document.body.style.opacity = 1;
 });
+
+restartButton.addEventListener("click", () => window.location.reload());

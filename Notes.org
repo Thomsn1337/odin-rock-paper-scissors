@@ -48,4 +48,4 @@
 
 ** DONE Redo the winner declaration
 
-** Redo main game loop
+** DONE Redo main game loop
