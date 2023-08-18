@@ -16,6 +16,10 @@ body {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   user-select: none;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hidden {
@@ -30,22 +34,22 @@ body {
   transition: opacity var(--fade-in-time) ease-in-out;
 }
 
-header {
+.header {
   margin: 40px 0 20px 0;
   padding: 30px;
 }
 
-header h1 {
+.header h1 {
   font-size: 56px;
   margin-bottom: 28px;
 }
 
-header h2 {
+.header h2 {
   font-size: 32px;
   margin-bottom: 50px;
 }
 
-header .score {
+.header .score {
   font-size: 28px;
 }
 
@@ -107,4 +111,13 @@ p {
 
 .modal-content p {
   margin-top: 80px;
+}
+
+footer {
+  font-size: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
